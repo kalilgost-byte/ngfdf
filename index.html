@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>متجر الطابونات 5×1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+header {
+    background: #28a745;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.price {
+    text-align: center;
+    font-size: 22px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.images-container img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.images-container img:hover {
+    transform: scale(1.05);
+}
+
+.images-container img.selected {
+    border-color: #28a745;
+}
+
+.order-form {
+    background: white;
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.order-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.order-form button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.order-form button:hover {
+    background: #218838;
+}
+
+#msg {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    .images-container img {
+        width: 120px;
+        height: 120px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>متجر الطابونات 5×1</h1>
+</header>
+
+<div class="container">
+
+    <p class="price">سعر الطابونة: 15000 دج</p>
+
+    <div class="images-container">
+        <!-- يمكنك إضافة المزيد من الصور هنا -->
+        <img src="https://via.placeholder.com/150x150?text=طابونة1" alt="طابونة1" onclick="selectImage(this)">
+        <img src="https://via.placeholder.com/150x150?text=طابونة2" alt="طابونة2" onclick="selectImage(this)">
+        <img src="https://via.placeholder.com/150x150?text=طابونة3" alt="طابونة3" onclick="selectImage(this)">
+    </div>
+
+    <div class="order-form">
+        <h2>طلب الطابونة</h2>
+        <input id="name" placeholder="الاسم">
+        <input id="lastname" placeholder="اللقب">
+        <input id="phone" placeholder="رقم الهاتف">
+        <input id="wilaya" placeholder="الولاية">
+        <input id="baladia" placeholder="البلدية">
+        <button onclick="sendOrder()">تأكيد الطلب</button>
+        <p id="msg"></p>
+    </div>
+
+</div>
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>متجر الطابونات 5×1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+}
+
+header {
+    background: #ff7f00;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.price {
+    text-align: center;
+    font-size: 22px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.images-container img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.images-container img:hover {
+    transform: scale(1.05);
+}
+
+.order-form {
+    background: #e6e6e6;
+    padding: 25px;
+    margin-top: 10px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.order-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.order-form button {
+    background: #ff7f00;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.order-form button:hover {
+    background: #e67300;
+}
+
+#msg {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    .images-container img {
+        width: 120px;
+        height: 120px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>متجر الطابونات 5×1</h1>
+</header>
+
+<div class="container">
+
+    <p class="price">سعر الطابونة: 15000 دج</p>
+
+    <div class="images-container">
+        <!-- الصور للعرض فقط -->
+        <img src="https://via.placeholder.com/150x150?text=طابونة1" alt="طابونة1">
+        <img src="https://via.placeholder.com/150x150?text=طابونة2" alt="طابونة2">
+        <img src="https://via.placeholder.com/150x150?text=طابونة3" alt="طابونة3">
+    </div>
+
+    <div class="order-form">
+        <h2>طلب الطابونة</h2>
+        <input id="name" placeholder="الاسم">
+        <input id="lastname" placeholder="اللقب">
+        <input id="phone" placeholder="رقم الهاتف">
+        <input id="wilaya" placeholder="الولاية">
+        <input id="baladia" placeholder="البلدية">
+        <button onclick="sendOrder()">تأكيد الطلب</button>
+        <p id="msg"></p>
+    </div>
+
+</div>
+
+<script>
+function sendOrder(){
+    const data = {
+        name: document.getElementById("name").value,
+        lastname: document.getElementById("lastname").value,
+        phone: document.getElementById("phone").value,
+        wilaya: document.getElementById("wilaya").value,
+        baladia: document.getElementById("baladia").value,
+        price: "15000"
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbw8hrMcK1KORLZhWzJlDF7CxlD-CYSKm_wsdxkEcLWA4B3kdQBTYbAb1nZVRwDt1uCp/exec",{
+        method:"POST",
+        body: JSON.stringify(data)
+    })
+    .then(res=>res.text())
+    .then(res=>{
+        document.getElementById("msg").innerHTML="✅ تم إرسال الطلب بنجاح";
+    })
+    .catch(err=>{
+        document.getElementById("msg").innerHTML="❌ خطأ في الاتصال";
+    });
+}
+</script>
+
+</body>
+</html>
